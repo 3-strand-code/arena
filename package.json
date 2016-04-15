@@ -4,6 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
+    "deploy": "gh-pages -d dist -m 'deploy docs [ci skip]'",
     "enclave-serve": "enclave",
     "enclave-build": "node node_modules/enclave/src/build.js",
     "enclave-eject": "node node_modules/enclave/src/eject/index.js",
@@ -12,8 +13,13 @@
   "author": "Ean Platter <eanplatter@gmail.com> (eanplatter.github.io)",
   "license": "MIT",
   "dependencies": {
+    "babel-standalone": "^6.7.4",
     "enclave": "^0.10.3",
+    "faker": "^3.1.0",
+    "lodash": "^4.11.1",
+    "node-uuid": "^1.4.7",
     "react": "^15.0.1",
+    "react-ace": "^3.2.0",
     "react-dom": "^15.0.1"
   }
 }

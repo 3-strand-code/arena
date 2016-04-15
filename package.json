@@ -1,0 +1,19 @@
+{
+  "name": "arena",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "enclave-serve": "enclave",
+    "enclave-build": "node node_modules/enclave/src/build.js",
+    "enclave-eject": "node node_modules/enclave/src/eject/index.js",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Ean Platter <eanplatter@gmail.com> (eanplatter.github.io)",
+  "license": "MIT",
+  "dependencies": {
+    "enclave": "^0.10.3",
+    "react": "^15.0.1",
+    "react-dom": "^15.0.1"
+  }
+}

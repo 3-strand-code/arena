@@ -1,7 +1,7 @@
 import * as Babel from 'babel-standalone'
 import faker from 'faker'
 import _ from 'lodash'
-import uuid from 'node-uuid'
+// import uuid from 'node-uuid'
 import React from 'react'
 import { render } from 'react-dom'
 
@@ -21,12 +21,18 @@ const babelConfig = {
 }
 
 const challenge = `hi('there') === 'there'`
-const uid = uuid.v4()
+// const uid = uuid.v4()
+
+// TODO use location.hash to nest all state in a "room" on firebase
+// 3sc-arena.firebase.io/arenas/{the hash}
 
 class App extends React.Component {
   state = {
-    code: "// const hi = () => 'there'",
     challenge,
+    // TODO, these 3 props belong to each user, move to array of users with these
+    // this state shape only allows for a single user, need to have an array of users
+    // each with a shape that looks like the current
+    code: "// const hi = () => 'there'",
     error: null,
     passed: false,
   }
@@ -46,6 +52,7 @@ class App extends React.Component {
   }, 500)
 
   componentWillMount() {
+    // TODO push the current user to array of users on firebase
     this.testChallenge()
   }
 
@@ -61,6 +68,9 @@ class App extends React.Component {
 
   renderEditors = () => {
     const { code, passed } = this.state
+    // TODO
+    // render editor for every user in fb array
+    // don't worry about adding the readOnly prop to editors that are no yours, yet
     return (
       <div className='column'>
         <AceEditor

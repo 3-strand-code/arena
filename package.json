@@ -1,28 +1,81 @@
 {
-  "name": "arena",
+  "name": "Arena",
   "version": "0.0.1",
-  "description": "",
+  "description": "Realtime multiplayer javascript challenges.",
   "main": "index.js",
   "scripts": {
     "deploy": "gh-pages -d dist -m 'deploy docs [ci skip]'",
-    "enclave-serve": "enclave",
-    "enclave-build": "node node_modules/enclave/src/build.js",
-    "enclave-eject": "node node_modules/enclave/src/eject/index.js",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "predeploy": "NODE_ENV=production npm run build",
+    "start": "webpack-dev-server --host 0.0.0.0",
+    "prebuild": "rm -rf dist",
+    "build": "npm run build:app && npm run build:assets",
+    "build:assets": "cp src/404.html dist",
+    "build:app": "webpack"
   },
-  "author": "Ean Platter <eanplatter@gmail.com> (eanplatter.github.io)",
+  "contributors": [
+    "Ean Platter <eanplatter@gmail.com> (eanplatter.github.io)",
+    "Levi Thomason <me@levithomason.com> (www.linkedin.com/in/levithomason)"
+  ],
+  "keywords": [
+    "code",
+    "collaborate",
+    "collaborative",
+    "compete",
+    "challenge",
+    "javascript",
+    "learn",
+    "multiplayer",
+    "realtime",
+    "ES2015",
+    "ES2016",
+    "ES6",
+    "ES7"
+  ],
   "license": "MIT",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/3-strand-code/arena.git"
+  },
+  "bugs": {
+    "url": "https://github.com/3-strand-code/arena/issues"
+  },
+  "engines": {
+    "node": ">=5",
+    "npm": ">=3"
+  },
   "dependencies": {
-    "babel-standalone": "^6.7.4",
+    "classnames": "^2.2.3",
     "faker": "^3.1.0",
+    "firebase": "^2.4.2",
+    "history": "^2.1.1",
+    "json-stringify-safe": "^5.0.1",
     "lodash": "^4.11.1",
-    "node-uuid": "^1.4.7",
-    "react": "^15.0.1",
-    "react-ace": "^3.2.0",
-    "react-dom": "^15.0.1"
+    "react": "^15.0.2",
+    "react-ace": "^3.3.0",
+    "react-dom": "^15.0.2",
+    "react-router": "^2.3.0"
   },
   "devDependencies": {
-    "enclave": "^0.10.3",
-    "gh-pages": "^0.11.0"
+    "babel-core": "^6.7.7",
+    "babel-loader": "^6.2.4",
+    "babel-plugin-transform-decorators-legacy": "^1.3.4",
+    "babel-preset-es2015": "^6.6.0",
+    "babel-preset-react": "^6.5.0",
+    "babel-preset-stage-0": "^6.5.0",
+    "babel-standalone": "^6.7.4",
+    "css-loader": "^0.23.1",
+    "favicons-webpack-plugin": "0.0.6",
+    "file-loader": "^0.8.5",
+    "gh-pages": "^0.11.0",
+    "html-webpack-plugin": "^2.16.0",
+    "json-loader": "^0.5.4",
+    "node-sass": "^3.6.0",
+    "raw-loader": "^0.5.1",
+    "react-hot-loader": "^3.0.0-beta.1",
+    "sass-loader": "^3.2.0",
+    "style-loader": "^0.13.1",
+    "url-loader": "^0.5.7",
+    "webpack": "^1.13.0",
+    "webpack-dev-server": "^1.14.1"
   }
 }

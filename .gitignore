@@ -1,1 +1,6 @@
+.DS_Store
+*.log*
+*.swp
+.idea/
+dist/
 node_modules/

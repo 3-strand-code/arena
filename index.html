@@ -4,11 +4,11 @@
   <meta charset="utf-8">
   <script>
     (function() {
-      // var ghPagesRedirect = sessionStorage.ghPagesRedirect
-      // delete sessionStorage.ghPagesRedirect
-      // if (ghPagesRedirect && ghPagesRedirect !== location.href) {
-      //   history.replaceState(null, null, ghPagesRedirect)
-      // }
+      var ghPagesRedirect = sessionStorage.ghPagesRedirect
+      delete sessionStorage.ghPagesRedirect
+      if (ghPagesRedirect && ghPagesRedirect !== location.href) {
+        history.replaceState(null, null, ghPagesRedirect)
+      }
     })()
   </script>
   <title>Arena</title>
